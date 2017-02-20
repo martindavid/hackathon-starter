@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import './index.scss';
+import configureStore from './store';
+import './index.css';
 import routes from './routes';
 import 'font-awesome/css/font-awesome.css';
 import 'flexboxgrid/css/flexboxgrid.css';
@@ -11,7 +13,11 @@ import 'flexboxgrid/css/flexboxgrid.css';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
+const store = configureStore();
+
 ReactDOM.render(
-  <Router routes={routes} history={browserHistory} />,
+  <Provider store={store}>
+    <Router routes={routes} history={browserHistory} />
+  </Provider>,
   document.getElementById('root'), // eslint-disable-line no-undef
 );
