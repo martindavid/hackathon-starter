@@ -14,18 +14,17 @@
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.2",
-    "sequelize-cli": "^2.5.1",
     "sqlite3": "^3.1.8",
     "tedious": "^1.14.0"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js --exec babel-node",
+    "start-dev": "concurrently \"npm run server-dev\" \"npm run client\"",
+    "server-dev": "nodemon server.js --exec babel-node",
+    "server": "babel-node server.js",
     "client": "babel-node start-client.js",
     "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
-    "lint": "eslint .",
-    "db:migrate": "sequelize db:migrate",
-    "db:seed": "sequelize db:seed:all"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "concurrently": "3.1.0",

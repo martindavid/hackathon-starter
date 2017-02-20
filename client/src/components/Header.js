@@ -1,10 +1,15 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
+
 
 const Header = () => {
     return (
-        <header>
-          <p>Header</p>
-        </header>
+        <div>
+            <AppBar
+              title="Hackathon Starter"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+            />
+        </div>
     );
 };
 
