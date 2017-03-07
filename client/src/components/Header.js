@@ -26,7 +26,7 @@ class Header extends Component {
             <div>
                 <AppBar
                     style={{ ...this.props.styles, ...styles.appBar }}
-                    title="Hackathon Starter"
+                    title={this.props.title}
                     iconElementLeft={
                         <IconButton style={{...styles.menuButton}} onClick={this.props.handleChangeRequestNavDrawer}>
                             <Menu color={white} />
