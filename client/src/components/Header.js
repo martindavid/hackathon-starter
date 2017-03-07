@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import Menu from 'material-ui/svg-icons/navigation/menu';
+import { white } from 'material-ui/styles/colors';
 
+class Header extends Component {
 
-const Header = () => {
-    return (
-        <div>
-            <AppBar
-              title="Hackathon Starter"
-              iconClassNameRight="muidocs-icon-navigation-expand-more"
-            />
-        </div>
-    );
+    render() {
+        const styles = {
+            appBar: {
+                position: 'fixed',
+                top: 0,
+                overflow: 'hidden',
+                maxHeight: 57
+            },
+            menuButton: {
+                marginLeft: 10
+            },
+            iconsRightContainer: {
+                marginLeft: 20
+            }
+        };
+
+        return (
+            <div>
+                <AppBar
+                    style={{ ...this.props.styles, ...styles.appBar }}
+                    title="Hackathon Starter"
+                    iconElementLeft={
+                        <IconButton style={{...styles.menuButton}} onClick={this.props.handleChangeRequestNavDrawer}>
+                            <Menu color={white} />
+                        </IconButton>
+                    }
+                />
+            </div>
+        );
+    }
 };
 
 export default Header;
