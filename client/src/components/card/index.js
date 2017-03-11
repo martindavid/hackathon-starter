@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
+import './card.css';
 
 const Card = props => {
     return (

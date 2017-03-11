@@ -15,6 +15,8 @@
     "flexboxgrid": "^6.3.1",
     "font-awesome": "^4.7.0",
     "material-ui": "^0.17.0",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0",
     "react": "15.4.0",
     "react-dom": "15.4.0",
     "react-redux": "^5.0.2",

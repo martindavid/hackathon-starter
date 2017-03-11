@@ -1,6 +1,6 @@
 const defaultState = {
     appName: 'Hackathon Starter',
-    isDrawerOpen: false
+    isDrawerOpen: true
 }
 
 export default (state = defaultState, action) => {

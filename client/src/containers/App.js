@@ -17,12 +17,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: 'DRAWER_CLICK', isDrawerOpen })
 });
 
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
-  },
-});
-
 class App extends Component {
 
   constructor() {
