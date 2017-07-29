@@ -40,19 +40,13 @@ class App extends Component {
     };
 
     return (
-      <MuiThemeProvider muiTheme={themeDefault}>
         <div>
-          <Header 
-            title={this.props.appName}
-            styles={styles.header}
-            handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer.bind(this)} />
-          <LeftDrawer navDrawerOpen={this.props.isDrawerOpen}
-            username="User Admin" />
-          <div style={{ ...styles.container }}>
+          <Header />
+          <div className="container">
             {this.props.children}
           </div>
         </div>
-      </MuiThemeProvider>
+      
     );
   }
 }

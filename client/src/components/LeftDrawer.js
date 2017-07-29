@@ -6,6 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import MenuList from './MenuList'
 import styles from './LeftDrawerStyle';
 
+
 class LeftDrawer extends Component {
     render() {
         return (
