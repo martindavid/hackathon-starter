@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import Menu from 'material-ui/svg-icons/navigation/menu';
-import { white } from 'material-ui/styles/colors';
 
 class Header extends Component {
-
     render() {
         return (
-            <nav className="navbar navbar-inverse navbar-fixed-top">
+            <nav className="navbar navbar-inverse">
                 <div className="container">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
