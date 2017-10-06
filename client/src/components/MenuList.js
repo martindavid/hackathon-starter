@@ -1,5 +1,4 @@
 import React from 'react';
-import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router';
 
 const MenuList = props => {

@@ -10,6 +10,7 @@ export default (state = defaultState, action) => {
               ...state,
               isDrawerOpen: action.isDrawerOpen
           }
+        default:
+          return state
     }
-    return state;
 }

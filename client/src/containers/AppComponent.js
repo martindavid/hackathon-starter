@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from '../components/card';
 
 class AppComponent extends Component {
-
     render() {
         return (
             <div>
