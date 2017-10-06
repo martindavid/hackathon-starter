@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 import './card.css';
 
@@ -19,13 +19,6 @@ const Card = props => {
             </div>
         </div>
     )
-}
-
-Card.propTypes = {
-    backgroundColor: PropTypes.string.isRequired,
-    iconClass: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
 }
 
 export default Card;

@@ -3,7 +3,6 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const debug = require('debug');
-
 const entries = require('./api/entries');
 
 const app = express();
