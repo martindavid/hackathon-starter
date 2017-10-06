@@ -21,8 +21,8 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "start-dev": "concurrently \"npm run server-dev\" \"npm run client\"",
     "server-dev": "nodemon server.js --exec babel-node",
-    "server": "babel-node server.js",
-    "client": "babel-node start-client.js",
+    "server": "node server.js",
+    "client": "node start-client.js",
     "lint": "eslint ."
   },
   "devDependencies": {
