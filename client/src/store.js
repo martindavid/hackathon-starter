@@ -2,7 +2,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 
-export default function configureStore(history) {
+const configureStore = (history) => {
     const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
     
     const initialState = {};
@@ -16,5 +16,15 @@ export default function configureStore(history) {
         )
     );
 
+    if (process.env.NODE_ENV !== 'production') {
+        if (module.hot) {
+            module.hot.accept('./reducers', () => {
+                store.replaceReducer(rootReducer);
+            })
+        }
+    }
+
     return store;
 }
+
+export default configureStore;

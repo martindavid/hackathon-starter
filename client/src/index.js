@@ -10,6 +10,8 @@ import 'font-awesome/css/font-awesome.css';
 const history = createBrowserHistory();
 const store = configureStore(history);
 
+const rootEl = document.getElementById('root');
+
 const render = () => {
   ReactDOM.render(
       <Provider store={store}>
@@ -19,4 +21,10 @@ const render = () => {
   )
 }
 
-render()
+render();
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render();
+  })
+}

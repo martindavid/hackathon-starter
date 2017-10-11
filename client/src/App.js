@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import { Switch, Route } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router'
 
+
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './containers/Home';
 import AppComponent from './containers/AppComponent';
 
@@ -14,7 +16,7 @@ const App = ({ history }) => {
     <ConnectedRouter history={history}>
       <div>
         <Header />
-        <div className="container">
+        <div className="container main-content">
           <div className="row">
             <div className="col-md-12">
             <Switch>
@@ -24,6 +26,7 @@ const App = ({ history }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </ConnectedRouter>
   )
