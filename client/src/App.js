@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './containers/Home';
 import AppComponent from './containers/AppComponent';
+import Login from './containers/Login';
 
 import './index.css';
 
@@ -22,6 +23,7 @@ const App = ({ history }) => {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/component" component={AppComponent} />
+              <Route path="/login" component={Login} />
             </Switch>
             </div>
           </div>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import LoginButton from './LoginButton';
-
 class Header extends Component {
     render() {
         return (
@@ -18,7 +16,7 @@ class Header extends Component {
                     </ul>
                     <ul className="navbar-nav justify-content-end">
                         <li className="nav-item">
-                            <LoginButton />
+                            <NavLink className="btn btn-outline-success" to="login">Login</NavLink>
                         </li>
                     </ul>
                 </div>
