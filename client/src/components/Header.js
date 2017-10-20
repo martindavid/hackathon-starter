@@ -1,28 +1,57 @@
-import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Collapse, Navbar, NavbarToggler,
+  NavbarBrand, Nav, NavItem } from 'reactstrap';
 
-const Header = () =>
-  (
-    <nav className='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-      <Link className='navbar-brand' to='/'>Project Name</Link>
-      <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation'>
-        <span className='navbar-toggler-icon' />
-      </button>
-      <div className='collapse navbar-collapse'>
-        <ul className='navbar-nav mr-auto'>
-          <li className='nav-item'>
-            <NavLink className='nav-link' to='/' activeClassName='active'>Home</NavLink></li>
-          <li className='nav-item'>
-            <NavLink className='nav-link' to='component' activeClassName='active'>Component</NavLink>
-          </li>
-        </ul>
-        <ul className='navbar-nav justify-content-end'>
-          <li className='nav-item'>
-            <NavLink className='btn btn-outline-success' to='login'>Login</NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
+import LoginButton from './LoginButton';
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
+  render() {
+    return (
+      <Navbar color='dark' dark expand='md' fixed='top' id='mainNav'>
+        <NavbarBrand tag={NavLink} to='/'>Start Bootstrap React</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav navbar className='mr-auto'>
+            <NavItem>
+              <NavLink
+                className='nav-link'
+                to='/'
+                activeClassName='active'
+              >Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className='nav-link'
+                to='component'
+                activeClassName='active'
+              >Component</NavLink>
+            </NavItem>
+          </Nav>
+          <Nav navbar className='justify-content-end'>
+            <NavItem>
+              <LoginButton />
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    );
+  }
+}
 
 export default Header;
