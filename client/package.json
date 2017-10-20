@@ -14,18 +14,20 @@
   "dependencies": {
     "ajv-keywords": "^2.1.0",
     "babel-plugin-transform-class-properties": "6.24.1",
+    "bootstrap": "^4.0.0-beta",
     "connected-react-router": "^4.2.3",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "node-bourbon": "^4.2.8",
     "node-neat": "^2.0.0-beta.0",
     "prop-types": "^15.6.0",
-    "react": "16.0.0",
-    "react-dom": "16.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-modal-dialog": "^4.0.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-alpha.3",
     "redux": "^3.6.0"
   },
   "scripts": {
