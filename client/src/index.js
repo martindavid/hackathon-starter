@@ -7,6 +7,7 @@ import configureStore from './store';
 import App from './App';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 const history = createBrowserHistory();
 const store = configureStore(history);

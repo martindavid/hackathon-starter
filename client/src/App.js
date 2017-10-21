@@ -10,8 +10,6 @@ import Home from './containers/Home';
 import AppComponent from './containers/AppComponent';
 import Login from './containers/Login';
 
-import './index.css';
-
 const App = ({ history }) => {
   return (
     <ConnectedRouter history={history}>

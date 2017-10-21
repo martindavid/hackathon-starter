@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalBody, Button, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import LoginForm from './LoginForm';
 
 class LoginButton extends Component {
@@ -29,13 +29,14 @@ class LoginButton extends Component {
           toggle={this.toggle}
           className={this.props.className}
         >
-          <ModalHeader toggle={this.toggle}>Ready to Leave</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
             <LoginForm />
           </ModalBody>
           <ModalFooter>
-            <Button color='secondary' onClick={this.toggle}>Cancel</Button>
-            <Button color='primary' onClick={this.toggle}>Logout</Button>{' '}
+            <span className='text-center'>
+              Don't have an account? Sign Up
+            </span>
           </ModalFooter>
         </Modal>
       </div>

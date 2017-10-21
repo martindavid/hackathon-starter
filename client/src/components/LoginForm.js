@@ -1,30 +1,61 @@
 import React from 'react';
+import {
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Form,
+  FormGroup,
+  Input } from 'reactstrap';
 
-const LoginForm = () => {
-  return (
+const LoginForm = () =>
+  (
     <div className='form-signin'>
-      <h2 className='form-signin-heading'>Please sign in</h2>
-      <label className='sr-only'>Email address</label>
-      <input type='email' className='form-control' placeholder='Email address' />
-      <label className='sr-only'>Password</label>
-      <input type='password' className='form-control' placeholder='Password' />
-      <div className='checkbox'>
-        <input type='checkbox' value='remember-me' /> Remember me
+      <Form>
+        <FormGroup>
+          <InputGroup>
+            <Input
+              type='text'
+              name='text'
+              id='username'
+              placeholder='Username'
+            />
+            <InputGroupAddon><i className='fa fa-envelope' /></InputGroupAddon>
+          </InputGroup>
+        </FormGroup>
+        <FormGroup>
+          <InputGroup>
+            <Input
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Password'
+            />
+            <InputGroupAddon><i className='fa fa-lock' /></InputGroupAddon>
+          </InputGroup>
+        </FormGroup>
+        <Button color='danger' className='col-sm-12'>
+          <i className='fa fa-unlock' />&nbsp;Log In
+        </Button>
+      </Form>
+      <hr />
+      <div className='social-login'>
+        <Button className='col-sm-12 social-login-fb'>
+          <i className='fa fa-facebook' /> | Log in with Facebook
+        </Button>
+        <Button className='col-sm-12 social-login-twitter'>
+          <i className='fa fa-twitter' /> | Log in with Twitter
+        </Button>
+        <Button className='col-sm-12 social-login-instagram'>
+          <i className='fa fa-instagram' /> | Log in with Instagram
+        </Button>
+        <Button className='col-sm-12 social-login-linkedin'>
+          <i className='fa fa-linkedin' /> | Log in with Linkedin
+        </Button>
+        <Button className='col-sm-12 social-login-google'>
+          <i className='fa fa-google' /> | Log in with Google
+        </Button>
       </div>
-      <button className='btn btn-lg btn-primary btn-block' type='button'>
-        <i className='fa fa-unlock' /> Sign in</button>
-      <button className='btn btn-lg btn-info btn-block' type='button'>
-        <i className='fa fa-facebook' /> | Sign in with Facebook</button>
-      <button className='btn btn-lg btn-info btn-block' type='button'>
-        <i className='fa fa-twitter' /> | Sign in with Twitter</button>
-      <button className='btn btn-lg btn-info btn-block' type='button'>
-        <i className='fa fa-google' /> | Sign in with Google</button>
-      <button className='btn btn-lg btn-info btn-block' type='button'>
-        <i className='fa fa-linkedin' /> | Sign in with Linkedin</button>
-      <button className='btn btn-lg btn-info btn-block' type='button'>
-        <i className='fa fa-instagram' /> | Sign in with Instagram</button>
     </div>
   );
-};
 
 export default LoginForm;
