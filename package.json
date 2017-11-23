@@ -5,7 +5,7 @@
   "dependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
-    "body-parser": "^1.18.2",    
+    "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "4.16.1",
     "faker": "^4.1.0",
@@ -22,6 +22,8 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "chalk": "^2.2.2",
     "concurrently": "3.5.0",
     "debug": "^3.1.0",
     "eslint": "4.8.0",

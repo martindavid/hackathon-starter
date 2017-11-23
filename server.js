@@ -1,10 +1,9 @@
 const express = require('express');
-const fs = require('fs');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const debug = require('debug');
+const chalk = require('chalk');
 
 const app = express();
 
@@ -35,18 +34,18 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
 // no stacktraces leaked to user unless in development environment
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   res.status(err.status || 500).send({
     message: err.message,
-    error: (app.get('env') === 'development') ? err : {}
+    error: (app.get('env') === 'development') ? err : {},
   });
 });
 
