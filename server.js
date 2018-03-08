@@ -2,8 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const logger = require('morgan');
-const chalk = require('chalk');
+const logging = require('./lib/logging');
 
 const app = express();
 
@@ -23,15 +22,23 @@ mongoose.connection.on('error', () => {
   throw new Error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
 
+// Add the request logger before anything else so that it can
+// accurately log requests.
+// [START requests]
+app.use(logging.requestLogger);
+// [END requests]
+
 app.set('port', (process.env.PORT || 3001));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(logger(process.env.NODE_ENV));
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+// The error handler must be before any other error middleware
+app.use(logging.errorLogger);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
