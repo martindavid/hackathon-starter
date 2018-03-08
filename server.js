@@ -16,11 +16,11 @@ dotenv.load({ path: '.env' });
  * Connect to MongoDB.
  */
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
-mongoose.connection.on('error', (err) => {
-  console.error(err);
-  console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
-  process.exit();
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI, {
+  useMongoClient: true,
+});
+mongoose.connection.on('error', () => {
+  throw new Error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
 
 app.set('port', (process.env.PORT || 3001));

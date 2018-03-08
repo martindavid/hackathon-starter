@@ -4,15 +4,17 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "devDependencies": {
-    "enzyme": "3.1.0",
-    "node-sass": "^4.5.0",
-    "npm-run-all": "^4.1.1",
+    "babel-eslint": "^8.0.1",
+    "enzyme": "3.3.0",
+    "eslint-plugin-import": "^2.9.0",
+    "node-sass-chokidar": "^1.1.0",
+    "npm-run-all": "^4.1.2",
     "react-addons-test-utils": "^15.6.2",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "react-scripts": "1.0.14"
+    "react-hot-loader": "^4.0.0",
+    "react-scripts": "1.1.1"
   },
   "dependencies": {
-    "ajv-keywords": "^2.1.0",
+    "ajv-keywords": "^3.1.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "bootstrap": "^4.0.0-beta",
     "connected-react-router": "^4.2.3",
@@ -31,11 +33,11 @@
     "redux": "^3.6.0"
   },
   "scripts": {
-    "build-css": "node-sass src/ -o src/",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "build:css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start:js": "react-scripts start",
+    "start": "npm-run-all -p watch:css start:js",
+    "build": "npm-run-all build:css build:js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
