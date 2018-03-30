@@ -1,38 +1,37 @@
 import React from 'react';
 import {
-  InputGroup,
-  InputGroupAddon,
   Button,
   Form,
-  FormGroup,
-  Input } from 'reactstrap';
+} from 'reactstrap';
 
 const LoginForm = () =>
   (
     <div className='form-signin'>
       <Form>
-        <FormGroup>
-          <InputGroup>
-            <Input
-              type='text'
-              name='text'
-              id='username'
-              placeholder='Username'
-            />
-            <InputGroupAddon><i className='fa fa-envelope' /></InputGroupAddon>
-          </InputGroup>
-        </FormGroup>
-        <FormGroup>
-          <InputGroup>
-            <Input
-              type='password'
-              name='password'
-              id='password'
-              placeholder='Password'
-            />
-            <InputGroupAddon><i className='fa fa-lock' /></InputGroupAddon>
-          </InputGroup>
-        </FormGroup>
+        <div className='input-group mb-3'>
+          <input
+            className='form-control'
+            type='text'
+            name='text'
+            id='username'
+            placeholder='Username'
+          />
+          <div className='input-group-append'>
+            <span className='input-group-text'><i className='fa fa-envelope' /></span>
+          </div>
+        </div>
+        <div className='input-group mb-3'>
+          <input
+            className='form-control'
+            type='password'
+            name='password'
+            id='password'
+            placeholder='Password'
+          />
+          <div className='input-group-append'>
+            <span className='input-group-text'><i className='fa fa-lock' /></span>
+          </div>
+        </div>
         <Button color='danger' className='col-sm-12'>
           <i className='fa fa-unlock' />&nbsp;Log In
         </Button>

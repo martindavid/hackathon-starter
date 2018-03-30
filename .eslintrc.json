@@ -28,5 +28,9 @@
         "paths": ["src"]
       }
     }
+  },
+  "globals": {
+    "window": true,
+    "fetch": true
   }
 }

@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
+import 'font-awesome/css/font-awesome.css';
 import configureStore from './store';
 
 import App from './App';
-import 'font-awesome/css/font-awesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 const history = createBrowserHistory();
