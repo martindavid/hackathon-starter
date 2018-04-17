@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler,
   NavbarBrand, Nav, NavItem } from 'reactstrap';
 
-import LoginButton from './LoginButton';
+import LoginButton from 'components/LoginButton';
 
 class Header extends Component {
   constructor(props) {
@@ -33,14 +33,17 @@ class Header extends Component {
                 className='nav-link'
                 to='/'
                 activeClassName='active'
-              >Home</NavLink>
+              >
+              Home
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 className='nav-link'
                 to='component'
                 activeClassName='active'
-              >Component</NavLink>
+              >Component
+              </NavLink>
             </NavItem>
           </Nav>
           <Nav navbar className='justify-content-end'>

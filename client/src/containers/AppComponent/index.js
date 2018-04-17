@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from 'components/card';
+import { InfoCard } from 'components/card';
 
 class AppComponent extends Component {
   componentWillMount() {}
@@ -9,27 +9,30 @@ class AppComponent extends Component {
         <h3>Card</h3>
         <div className='row'>
           <div className='col-md-4'>
-            <Card
-              backgroundColor='orange'
+            <InfoCard
+              bgColor='orange'
               iconClass='fa-calendar'
-              category='Revenue'
+              description='Revenue'
               title='$40,000'
+              subInfo='Last 24 hours'
             />
           </div>
           <div className='col-md-4'>
-            <Card
-              backgroundColor='blue'
+            <InfoCard
+              bgColor='blue'
               iconClass='fa-clone'
-              category='Revenue'
+              description='Revenue'
               title='$40,000'
+              subInfo='Last 24 hours'
             />
           </div>
           <div className='col-md-4'>
-            <Card
-              backgroundColor='red'
+            <InfoCard
+              bgColor='red'
               iconClass='fa-shopping-cart'
-              category='Revenue'
+              description='Revenue'
               title='$40,000'
+              subInfo='Last 24 hours'
             />
           </div>
         </div>

@@ -3,8 +3,7 @@ import { Switch, Route } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import { Header, Footer } from 'components/layout';
 import Home from 'containers/Home';
 import AppComponent from 'containers/AppComponent';
 import Login from 'containers/Login';
