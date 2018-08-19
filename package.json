@@ -1,5 +1,5 @@
 {
-  "name": "lookup-server",
+  "name": "hackathon-starter-server",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "express-winston": "^2.5.0",
     "faker": "^4.1.0",
     "fs": "0.0.2",
+    "lodash": "^4.17.10",
     "mongoose": "^5.0.9",
     "winston": "^2.4.0"
   },
