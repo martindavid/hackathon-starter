@@ -24,7 +24,7 @@ class Header extends Component {
   render() {
     return (
       <Navbar color='dark' dark expand='md' fixed='top' id='mainNav'>
-        <NavbarBrand tag={NavLink} to='/'>Start Bootstrap React</NavbarBrand>
+        <NavbarBrand tag={NavLink} to='/'>Hackathon Starter</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar className='mr-auto'>

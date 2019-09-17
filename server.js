@@ -14,11 +14,13 @@ dotenv.load({ path: '.env' });
 /**
  * Connect to MongoDB.
  */
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
-mongoose.connection.on('error', () => {
-  throw new Error('MongoDB Connection Error. Please make sure that MongoDB is running.');
-});
+if (process.env.MONGODB_URI) {
+  mongoose.Promise = global.Promise;
+  mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+  mongoose.connection.on('error', () => {
+    throw new Error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+  });
+}
 
 // Add the request logger before anything else so that it can
 // accurately log requests.
