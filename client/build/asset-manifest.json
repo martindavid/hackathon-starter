@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05a5b52f.chunk.css",
+    "main.js": "/static/js/main.706854e5.chunk.js",
+    "main.js.map": "/static/js/main.706854e5.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ecbc9411.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ecbc9411.js.map",
+    "static/css/2.3fad095e.chunk.css": "/static/css/2.3fad095e.chunk.css",
+    "static/js/2.7a7fc3a1.chunk.js": "/static/js/2.7a7fc3a1.chunk.js",
+    "static/js/2.7a7fc3a1.chunk.js.map": "/static/js/2.7a7fc3a1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9c3c5c627c04924c0819f068e03946ae.js": "/precache-manifest.9c3c5c627c04924c0819f068e03946ae.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.3fad095e.chunk.css.map": "/static/css/2.3fad095e.chunk.css.map",
+    "static/css/main.05a5b52f.chunk.css.map": "/static/css/main.05a5b52f.chunk.css.map",
+    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff"
+  }
+}
