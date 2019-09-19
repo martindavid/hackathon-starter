@@ -16,7 +16,7 @@ const render = () => {
     <Provider store={store}>
       <App history={history} />
     </Provider>,
-    document.getElementById('root'), // eslint-disable-line no-undef
+    document.getElementById('root') // eslint-disable-line no-undef
   );
 };
 

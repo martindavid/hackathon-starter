@@ -1,10 +1,10 @@
-import { routerMiddleware } from "connected-react-router";
-import { createStore, compose, applyMiddleware } from "redux";
-import createRootReducer from "redux/reducers";
+import { routerMiddleware } from 'connected-react-router';
+import { createStore, compose, applyMiddleware } from 'redux';
+import createRootReducer from 'redux/reducers';
 
-const configureStore = history => {
+const configureStore = (history) => {
   const composeEnhancer =
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const rootReducer = createRootReducer(history);
   const initialState = {};
@@ -14,9 +14,9 @@ const configureStore = history => {
     composeEnhancer(applyMiddleware(routerMiddleware(history)))
   );
 
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {
-      module.hot.accept("redux/reducers", () => {
+      module.hot.accept('redux/reducers', () => {
         store.replaceReducer(rootReducer);
       });
     }

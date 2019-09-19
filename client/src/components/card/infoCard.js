@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './card.css';
 
 const InfoCard = ({
-  bgColor, iconClass, title, description, subInfo,
+ bgColor, iconClass, title, description, subInfo,
 }) => (
-  <div className='card card-stats'>
-    <div className='card-header' data-background-color={bgColor}>
+  <div className="card card-stats">
+    <div className="card-header" data-background-color={bgColor}>
       <i className={`fa ${iconClass}`} />
     </div>
-    <div className='card-content'>
-      <p className='category'>{title}</p>
-      <h3 className='title'>{description}</h3>
+    <div className="card-content">
+      <p className="category">{title}</p>
+      <h3 className="title">{description}</h3>
     </div>
-    <div className='card-footer'>
-      {
-        subInfo &&
-        <div className='stats'>
-          <i className='fa fa-calendar' /> {subInfo}
+    <div className="card-footer">
+      {subInfo && (
+        <div className="stats">
+          <i className="fa fa-calendar" />
+          {' '}
+          {subInfo}
         </div>
-      }
+      )}
     </div>
   </div>
 );

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+ Modal, ModalHeader, ModalBody, ModalFooter,
+} from 'reactstrap';
 import LoginForm from './LoginForm';
 
 class LoginButton extends Component {
@@ -13,30 +15,27 @@ class LoginButton extends Component {
   }
 
   toggle() {
+    const { modal } = this.state;
     this.setState({
-      modal: !this.state.modal,
+      modal: !modal,
     });
   }
 
   render() {
+    const { modal } = this.state;
+    const { className } = this.props;
     return (
       <div>
-        <button className='btn btn-success' onClick={this.toggle}>
+        <button type="button" className="btn btn-success" onClick={this.toggle}>
           Login
         </button>
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className={this.props.className}
-        >
+        <Modal isOpen={modal} toggle={this.toggle} className={className}>
           <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
             <LoginForm />
           </ModalBody>
           <ModalFooter>
-            <span className='text-center'>
-              Don't have an account? Sign Up
-            </span>
+            <span className="text-center">Do not have an account? Sign Up</span>
           </ModalFooter>
         </Modal>
       </div>

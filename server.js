@@ -1,8 +1,8 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const logging = require("./lib/logging");
+const express = require('express');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const logging = require('./lib/logging');
 
 const app = express();
 
@@ -17,9 +17,9 @@ dotenv.config();
 if (process.env.MONGODB_URI) {
   mongoose.Promise = global.Promise;
   mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
-  mongoose.connection.on("error", () => {
+  mongoose.connection.on('error', () => {
     throw new Error(
-      "MongoDB Connection Error. Please make sure that MongoDB is running."
+      'MongoDB Connection Error. Please make sure that MongoDB is running.'
     );
   });
 }
@@ -30,13 +30,13 @@ if (process.env.MONGODB_URI) {
 app.use(logging.requestLogger);
 // [END requests]
 
-app.set("port", process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3001);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Express only serves static assets in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
 // The error handler must be before any other error middleware
@@ -44,7 +44,7 @@ app.use(logging.errorLogger);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error("Not Found");
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -54,10 +54,10 @@ app.use((req, res, next) => {
 app.use((err, req, res) => {
   res.status(err.status || 500).send({
     message: err.message,
-    error: app.get("env") === "development" ? err : {}
+    error: app.get('env') === 'development' ? err : {},
   });
 });
 
-app.listen(app.get("port"), () => {
-  console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
+app.listen(app.get('port'), () => {
+  console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });

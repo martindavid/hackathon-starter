@@ -20,7 +20,8 @@
     "server:dev": "nodemon server.js --exec babel-node",
     "server": "node server.js",
     "client": "node start-client.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "precommit": "npm run lint"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
@@ -35,6 +36,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.3",
+    "husky": "^3.0.5",
     "nodemon": "^1.19.2"
   }
 }

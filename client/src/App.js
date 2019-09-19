@@ -1,11 +1,11 @@
-import React from "react";
-import { Switch, Route } from "react-router";
-import { ConnectedRouter } from "connected-react-router";
+import React from 'react';
+import { Switch, Route } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
 
-import { Header, Footer } from "components/layout";
-import Home from "containers/Home";
-import AppComponent from "containers/AppComponent";
-import Login from "containers/Login";
+import { Header, Footer } from 'components/layout';
+import Home from 'containers/Home';
+import AppComponent from 'containers/AppComponent';
+import Login from 'containers/Login';
 
 const App = ({ history }) => (
   <ConnectedRouter history={history}>

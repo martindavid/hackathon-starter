@@ -1,11 +1,9 @@
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 
-import common from "./common";
+import common from './common';
 
-export default history => {
-  return combineReducers({
+export default (history) => combineReducers({
     router: connectRouter(history),
-    common
+    common,
   });
-};
